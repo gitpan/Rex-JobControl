@@ -27,13 +27,17 @@ requires:
   FindBin: '0'
   Getopt::Long: '0'
   IPC::Open2: '0'
+  Minion: '0'
   Mojo::Base: '0'
   Mojo::JSON: '0'
   Mojo::Log: '0'
+  Mojolicious: '0'
   Mojolicious::Commands: '0'
   Mojolicious::Plugin: '0'
+  Mojolicious::Plugin::Authentication: '0'
+  Rex: '0'
   YAML: '0'
   base: '0'
   strict: '0'
   warnings: '0'
-version: 0.0.1
+version: 0.0.4

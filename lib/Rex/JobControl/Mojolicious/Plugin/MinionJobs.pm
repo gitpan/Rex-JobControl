@@ -5,7 +5,7 @@
 # vim: set expandtab:
 
 package Rex::JobControl::Mojolicious::Plugin::MinionJobs;
-$Rex::JobControl::Mojolicious::Plugin::MinionJobs::VERSION = '0.0.1';
+$Rex::JobControl::Mojolicious::Plugin::MinionJobs::VERSION = '0.0.4';
 use strict;
 use warnings;
 

@@ -5,7 +5,7 @@
 # vim: set expandtab:
 
 package Rex::JobControl::Helper::Project::Job;
-$Rex::JobControl::Helper::Project::Job::VERSION = '0.0.1';
+$Rex::JobControl::Helper::Project::Job::VERSION = '0.0.4';
 use strict;
 use warnings;
 
