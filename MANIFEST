@@ -11,6 +11,7 @@ lib/Rex/JobControl.pm
 lib/Rex/JobControl/Audit.pm
 lib/Rex/JobControl/Dashboard.pm
 lib/Rex/JobControl/Formular.pm
+lib/Rex/JobControl/Help.pm
 lib/Rex/JobControl/Helper/AuditLog.pm
 lib/Rex/JobControl/Helper/Chdir.pm
 lib/Rex/JobControl/Helper/Project.pm
@@ -73,6 +74,7 @@ lib/Rex/JobControl/templates/formular/formular_finished.html.ep
 lib/Rex/JobControl/templates/formular/formular_new.html.ep
 lib/Rex/JobControl/templates/formular/view.html.ep
 lib/Rex/JobControl/templates/formular/view_formular.html.ep
+lib/Rex/JobControl/templates/help/index.html.ep
 lib/Rex/JobControl/templates/job/edit.html.ep
 lib/Rex/JobControl/templates/job/execute.html.ep
 lib/Rex/JobControl/templates/job/job_new.html.ep
@@ -80,6 +82,7 @@ lib/Rex/JobControl/templates/job/view.html.ep
 lib/Rex/JobControl/templates/layouts/audit.html.ep
 lib/Rex/JobControl/templates/layouts/dashboard.html.ep
 lib/Rex/JobControl/templates/layouts/formular.html.ep
+lib/Rex/JobControl/templates/layouts/help.html.ep
 lib/Rex/JobControl/templates/layouts/job.html.ep
 lib/Rex/JobControl/templates/layouts/login.html.ep
 lib/Rex/JobControl/templates/layouts/nodes.html.ep

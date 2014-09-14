@@ -5,7 +5,7 @@
 # vim: set expandtab:
 
 package Rex::JobControl::Helper::Project::Job;
-$Rex::JobControl::Helper::Project::Job::VERSION = '0.0.4';
+$Rex::JobControl::Helper::Project::Job::VERSION = '0.5.0';
 use strict;
 use warnings;
 
@@ -107,7 +107,7 @@ sub execute {
 
   if ($cmdb) {
     $self->project->app->log->debug("Creating cmdb file");
-    YAML::DumpFile( "$cmdb_path/default.yml", $cmdb );
+    YAML::DumpFile( "$cmdb_path/jobcontrol.yml", $cmdb );
   }
 
   if ( $self->execute_strategy eq "step" ) {
@@ -147,6 +147,13 @@ sub execute {
   SERVER: for my $srv (@server) {
 
     STEP: for my $s ( @{ $self->steps } ) {
+
+        if(-f $self->project->project_path . "/next_server.txt") {
+          $srv = eval { local(@ARGV, $/) = ($self->project->project_path . "/next_server.txt"); <>; };
+          chomp $srv;
+          unlink $self->project->project_path . "/next_server.txt";
+        }
+
         my ( $rexfile_name, $task ) = split( /\//, $s );
         my $rexfile = $self->project->get_rexfile($rexfile_name);
 

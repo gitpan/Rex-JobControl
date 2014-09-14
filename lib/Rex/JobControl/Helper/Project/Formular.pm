@@ -5,7 +5,7 @@
 # vim: set expandtab:
 
 package Rex::JobControl::Helper::Project::Formular;
-$Rex::JobControl::Helper::Project::Formular::VERSION = '0.0.4';
+$Rex::JobControl::Helper::Project::Formular::VERSION = '0.5.0';
 use strict;
 use warnings;
 
@@ -82,14 +82,10 @@ sub create {
 
   File::Path::make_path($form_path);
 
-  print STDERR Dumper( \%data );
-
   my $steps = $data{steps};
 
   delete $data{directory};
   delete $data{steps};
-
-  print STDERR Dumper( \%data );
 
   my $form_configuration = {%data};
 

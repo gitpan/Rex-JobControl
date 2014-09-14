@@ -1,5 +1,5 @@
 package Mojolicious::Command::jobcontrol;
-$Mojolicious::Command::jobcontrol::VERSION = '0.0.4';
+$Mojolicious::Command::jobcontrol::VERSION = '0.5.0';
 use Mojo::Base 'Mojolicious::Command';
 
 use Data::Dumper;

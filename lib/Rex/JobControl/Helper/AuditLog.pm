@@ -5,7 +5,7 @@
 # vim: set expandtab:
 
 package Rex::JobControl::Helper::AuditLog;
-$Rex::JobControl::Helper::AuditLog::VERSION = '0.0.4';
+$Rex::JobControl::Helper::AuditLog::VERSION = '0.5.0';
 use base 'Mojo::Log';
 use Mojo::JSON;
 use DateTime;

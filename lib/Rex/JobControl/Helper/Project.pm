@@ -5,7 +5,7 @@
 # vim: set expandtab:
 
 package Rex::JobControl::Helper::Project;
-$Rex::JobControl::Helper::Project::VERSION = '0.0.4';
+$Rex::JobControl::Helper::Project::VERSION = '0.5.0';
 use strict;
 use warnings;
 use Data::Dumper;
@@ -79,6 +79,24 @@ sub create {
   my $project_configuration = { name => $self->{name}, };
 
   YAML::DumpFile( "$project_path/project.conf.yml", $project_configuration );
+}
+
+sub update {
+  my ($self) = @_;
+
+  my $project_path = $self->project_path;
+  YAML::DumpFile( "$project_path/project.conf.yml", $self->{project_configuration} );
+}
+
+sub add_node {
+  my ($self, $host) = @_;
+
+  if(! exists $self->{project_configuration}->{nodes}) {
+    $self->{project_configuration}->{nodes} = [];
+  }
+  
+  push @{ $self->{project_configuration}->{nodes} }, $host;
+  $self->update;
 }
 
 sub job_count {
@@ -171,6 +189,11 @@ sub all_server {
 
   for my $rex ( @{ $self->rexfiles } ) {
     push @all_server, @{ $rex->all_server };
+  }
+
+  $self->load;
+  for my $srv (@{ $self->{project_configuration}->{nodes} }) {
+    push @all_server, $srv;
   }
 
   return \@all_server;

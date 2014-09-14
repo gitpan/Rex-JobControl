@@ -5,7 +5,7 @@
 # vim: set expandtab:
 
 package Rex::JobControl::Job;
-$Rex::JobControl::Job::VERSION = '0.0.4';
+$Rex::JobControl::Job::VERSION = '0.5.0';
 use Mojo::Base 'Mojolicious::Controller';
 use DateTime;
 

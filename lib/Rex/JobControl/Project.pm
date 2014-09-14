@@ -1,5 +1,5 @@
 package Rex::JobControl::Project;
-$Rex::JobControl::Project::VERSION = '0.0.4';
+$Rex::JobControl::Project::VERSION = '0.5.0';
 use Mojo::Base 'Mojolicious::Controller';
 use Data::Dumper;
 

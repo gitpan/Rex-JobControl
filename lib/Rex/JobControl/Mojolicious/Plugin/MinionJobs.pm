@@ -5,7 +5,7 @@
 # vim: set expandtab:
 
 package Rex::JobControl::Mojolicious::Plugin::MinionJobs;
-$Rex::JobControl::Mojolicious::Plugin::MinionJobs::VERSION = '0.0.4';
+$Rex::JobControl::Mojolicious::Plugin::MinionJobs::VERSION = '0.5.0';
 use strict;
 use warnings;
 
@@ -44,6 +44,8 @@ sub register {
       my ( $job, $project_dir, $rexfile_name, $rexfile_url,
         $rexfile_description )
         = @_;
+
+      $job->app->log->debug("checkout_rexfile: got params: " . join(", ", @_));
 
       eval {
         my $pr = $job->app->project($project_dir);

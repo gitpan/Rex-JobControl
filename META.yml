@@ -40,4 +40,4 @@ requires:
   base: '0'
   strict: '0'
   warnings: '0'
-version: 0.0.4
+version: 0.5.0
