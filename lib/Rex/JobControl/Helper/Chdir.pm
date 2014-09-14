@@ -5,7 +5,7 @@
 # vim: set expandtab:
 
 package Rex::JobControl::Helper::Chdir;
-$Rex::JobControl::Helper::Chdir::VERSION = '0.5.0';
+$Rex::JobControl::Helper::Chdir::VERSION = '0.6.0';
 use Cwd;
 require Exporter;
 our @EXPORT;

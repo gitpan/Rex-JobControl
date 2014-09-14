@@ -5,7 +5,7 @@
 # vim: set expandtab:
 
 package Rex::JobControl::Mojolicious::Plugin::User;
-$Rex::JobControl::Mojolicious::Plugin::User::VERSION = '0.5.0';
+$Rex::JobControl::Mojolicious::Plugin::User::VERSION = '0.6.0';
 use strict;
 use warnings;
 
