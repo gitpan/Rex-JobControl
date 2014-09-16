@@ -79,6 +79,7 @@ lib/Rex/JobControl/templates/job/edit.html.ep
 lib/Rex/JobControl/templates/job/execute.html.ep
 lib/Rex/JobControl/templates/job/job_new.html.ep
 lib/Rex/JobControl/templates/job/view.html.ep
+lib/Rex/JobControl/templates/job/view_output_log.html.ep
 lib/Rex/JobControl/templates/layouts/audit.html.ep
 lib/Rex/JobControl/templates/layouts/dashboard.html.ep
 lib/Rex/JobControl/templates/layouts/formular.html.ep

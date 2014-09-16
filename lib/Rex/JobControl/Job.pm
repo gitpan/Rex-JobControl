@@ -5,7 +5,7 @@
 # vim: set expandtab:
 
 package Rex::JobControl::Job;
-$Rex::JobControl::Job::VERSION = '0.6.0';
+$Rex::JobControl::Job::VERSION = '0.7.0';
 use Mojo::Base 'Mojolicious::Controller';
 use DateTime;
 
@@ -152,6 +152,11 @@ sub job_execute_dispatch {
 
   $self->redirect_to(
     "/project/" . $pr->directory . "/job/" . $job->directory );
+}
+
+sub view_output_log {
+  my $self = shift;
+  $self->render;
 }
 
 1;

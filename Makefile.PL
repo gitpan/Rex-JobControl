@@ -22,6 +22,7 @@ my %WriteMakefileArgs = (
   "LICENSE" => "apache",
   "NAME" => "Rex::JobControl",
   "PREREQ_PM" => {
+    "Capture::Tiny" => 0,
     "Cwd" => 0,
     "Data::Dumper" => 0,
     "DateTime" => 0,
@@ -33,7 +34,6 @@ my %WriteMakefileArgs = (
     "File::Spec::Functions" => 0,
     "FindBin" => 0,
     "Getopt::Long" => 0,
-    "IPC::Open2" => 0,
     "Minion" => 0,
     "Mojo::Base" => 0,
     "Mojo::JSON" => 0,
@@ -52,7 +52,7 @@ my %WriteMakefileArgs = (
     "Test::Mojo" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.6.0",
+  "VERSION" => "0.7.0",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -60,6 +60,7 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
+  "Capture::Tiny" => 0,
   "Cwd" => 0,
   "Data::Dumper" => 0,
   "DateTime" => 0,
@@ -71,7 +72,6 @@ my %FallbackPrereqs = (
   "File::Spec::Functions" => 0,
   "FindBin" => 0,
   "Getopt::Long" => 0,
-  "IPC::Open2" => 0,
   "Minion" => 0,
   "Mojo::Base" => 0,
   "Mojo::JSON" => 0,

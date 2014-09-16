@@ -15,6 +15,7 @@ meta-spec:
   version: '1.4'
 name: Rex-JobControl
 requires:
+  Capture::Tiny: '0'
   Cwd: '0'
   Data::Dumper: '0'
   DateTime: '0'
@@ -26,7 +27,6 @@ requires:
   File::Spec::Functions: '0'
   FindBin: '0'
   Getopt::Long: '0'
-  IPC::Open2: '0'
   Minion: '0'
   Mojo::Base: '0'
   Mojo::JSON: '0'
@@ -40,4 +40,4 @@ requires:
   base: '0'
   strict: '0'
   warnings: '0'
-version: 0.6.0
+version: 0.7.0
