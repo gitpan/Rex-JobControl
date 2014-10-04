@@ -6,6 +6,9 @@ Makefile.PL
 README
 bin/rex_job_control
 dist.ini
+images/execute.png
+images/job.png
+images/login.png
 jobcontrol.conf
 lib/Rex/JobControl.pm
 lib/Rex/JobControl/Audit.pm

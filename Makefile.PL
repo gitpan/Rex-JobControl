@@ -27,6 +27,7 @@ my %WriteMakefileArgs = (
     "Data::Dumper" => 0,
     "DateTime" => 0,
     "Digest::Bcrypt" => 0,
+    "Digest::MD5" => 0,
     "Exporter" => 0,
     "File::Basename" => 0,
     "File::Path" => 0,
@@ -52,7 +53,7 @@ my %WriteMakefileArgs = (
     "Test::Mojo" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.7.0",
+  "VERSION" => "0.18.0",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -65,6 +66,7 @@ my %FallbackPrereqs = (
   "Data::Dumper" => 0,
   "DateTime" => 0,
   "Digest::Bcrypt" => 0,
+  "Digest::MD5" => 0,
   "Exporter" => 0,
   "File::Basename" => 0,
   "File::Path" => 0,

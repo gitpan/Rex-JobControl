@@ -1,5 +1,5 @@
 package Rex::JobControl::Dashboard;
-$Rex::JobControl::Dashboard::VERSION = '0.7.0';
+$Rex::JobControl::Dashboard::VERSION = '0.18.0';
 use Mojo::Base 'Mojolicious::Controller';
 
 sub check_login {

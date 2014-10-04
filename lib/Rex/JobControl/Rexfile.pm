@@ -5,9 +5,10 @@
 # vim: set expandtab:
 
 package Rex::JobControl::Rexfile;
-$Rex::JobControl::Rexfile::VERSION = '0.7.0';
+$Rex::JobControl::Rexfile::VERSION = '0.18.0';
 use Mojo::Base 'Mojolicious::Controller';
 use Cwd;
+use File::Spec;
 
 sub prepare_stash {
   my $self = shift;
@@ -62,13 +63,20 @@ sub rexfile_new_create {
       }
 
       $rexfile_archive->move_to(
-        getcwd() . "/upload/" . $rexfile_archive->filename );
+        File::Spec->catdir(
+          $self->config->{upload_tmp_path},
+          $rexfile_archive->filename
+        )
+      );
 
       $self->minion->enqueue(
         checkout_rexfile => [
           $pr->directory,
           $self->param("rexfile_name"),
-          getcwd() . "/upload/" . $rexfile_archive->filename,
+          File::Spec->catdir(
+            $self->config->{upload_tmp_path},
+            $rexfile_archive->filename
+          ),
           $self->param("rexfile_description")
         ]
       );

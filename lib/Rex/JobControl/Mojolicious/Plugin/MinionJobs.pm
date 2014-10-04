@@ -5,7 +5,7 @@
 # vim: set expandtab:
 
 package Rex::JobControl::Mojolicious::Plugin::MinionJobs;
-$Rex::JobControl::Mojolicious::Plugin::MinionJobs::VERSION = '0.7.0';
+$Rex::JobControl::Mojolicious::Plugin::MinionJobs::VERSION = '0.18.0';
 use strict;
 use warnings;
 
@@ -51,6 +51,7 @@ sub register {
         my $pr = $job->app->project($project_dir);
         $pr->create_rexfile(
           directory   => $rexfile_name,
+          name        => $rexfile_name,
           url         => $rexfile_url,
           description => $rexfile_description,
         );

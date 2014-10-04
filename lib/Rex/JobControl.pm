@@ -183,7 +183,7 @@ List user:
 =cut
 
 package Rex::JobControl;
-$Rex::JobControl::VERSION = '0.7.0';
+$Rex::JobControl::VERSION = '0.18.0';
 use File::Basename 'dirname';
 use File::Spec::Functions 'catdir';
 use Mojo::Base 'Mojolicious';
@@ -216,6 +216,16 @@ sub startup {
   # Load plugins
   #######################################################################
   $self->plugin( "Config", file => $cfg );
+
+  if ( -d dirname( $self->config->{log}->{access_log} ) ) {
+    $self->app->log(
+      Mojo::Log->new(
+        path  => $self->config->{log}->{access_log},
+        level => $self->config->{log}->{access_log_level}
+      )
+    );
+  }
+
   $self->plugin("Rex::JobControl::Mojolicious::Plugin::Project");
 
   $self->plugin( Minion => { File => $self->app->config->{minion_db_file} } );
@@ -250,7 +260,6 @@ sub startup {
 
   $r->get('/login')->to('dashboard#login');
   $r->post('/login')->to('dashboard#login_post');
-
 
   my $r_formular_execute =
     $r->bridge('/project/:project_dir/formular/:formular_dir/execute')

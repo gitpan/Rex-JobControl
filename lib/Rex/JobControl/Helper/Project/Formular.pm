@@ -5,7 +5,7 @@
 # vim: set expandtab:
 
 package Rex::JobControl::Helper::Project::Formular;
-$Rex::JobControl::Helper::Project::Formular::VERSION = '0.7.0';
+$Rex::JobControl::Helper::Project::Formular::VERSION = '0.18.0';
 use strict;
 use warnings;
 
@@ -63,7 +63,7 @@ sub _config_file {
 
 sub steps {
   my ($self) = @_;
-  return $self->{steps}->{formulars};
+  return $self->{steps}->{formulars} || [];
 }
 
 sub formulars {

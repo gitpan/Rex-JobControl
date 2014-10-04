@@ -5,7 +5,7 @@
 # vim: set expandtab:
 
 package Rex::JobControl::Job;
-$Rex::JobControl::Job::VERSION = '0.7.0';
+$Rex::JobControl::Job::VERSION = '0.18.0';
 use Mojo::Base 'Mojolicious::Controller';
 use DateTime;
 
@@ -68,11 +68,11 @@ sub view {
 
   $self->app->log->debug("got last execution: $last_time");
 
-  my $dt = DateTime->from_epoch( epoch => $last_time );
   if ( $last_time == 0 ) {
     $self->stash( last_execution => '-' );
   }
   else {
+    my $dt = DateTime->from_epoch( epoch => $last_time );
     $self->stash( last_execution => $dt->ymd("-") . " " . $dt->hms(":") );
   }
   $self->stash( last_status => $job->last_status );
